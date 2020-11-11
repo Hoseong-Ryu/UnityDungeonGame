@@ -6,13 +6,13 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
-cubemaze/[Ll]ibrary/
-cubemaze/[Tt]emp/
-cubemaze/[Oo]bj/
-cubemaze/[Bb]uild/
-cubemaze/[Bb]uilds/
-cubemaze/[Ll]ogs/
-cubemaze/[Uu]ser[Ss]ettings/
+unityDungeon/[Ll]ibrary/
+unityDungeon/[Tt]emp/
+unityDungeon/[Oo]bj/
+unityDungeon/[Bb]uild/
+unityDungeon/[Bb]uilds/
+unityDungeon/[Ll]ogs/
+unityDungeon/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
