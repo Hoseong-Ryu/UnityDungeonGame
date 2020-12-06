@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\hoseong\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\hoseong\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_unityDungeon.-1104293024.00" t="ExcludeRecursive" />
-    <e p="C:\Users\hoseong\Documents\GitHub\UnityDungeonGame\unityDungeon" t="IncludeRecursive">
+    <e p="C:\Users\hoseo\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\hoseo\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_unityDungeon.-962510425.00" t="ExcludeRecursive" />
+    <e p="C:\Users\hoseo\Documents\GitHub\UnityDungeonGame\unityDungeon" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="scripts" t="Include">
+          <e p="healthPoint.cs" t="Include" />
           <e p="monster.cs" t="Include" />
           <e p="player.cs" t="Include" />
         </e>

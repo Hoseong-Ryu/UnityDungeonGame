@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class player : MonoBehaviour
     private CharacterController controller;
     private bool dir = true;  // 오른쪽 : true, 왼쪽 false
     public float speed = 5;
+    public Slider hpBar;
+
+    private bool knockdown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +105,19 @@ public class player : MonoBehaviour
                 speed *= 2;
 
             controller.Move(Time.deltaTime * speed * transform.TransformDirection(Vector3.forward));
+        }
+        //player hp
+        if (hpBar.value <= 0f)
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f&&knockdown == false)
+            {
+                animator.Play("knockdown_A2",-1,0);
+                knockdown = true;
+            }
+            if(knockdown)
+            {
+                Destroy(gameObject, 3);
+            }
         }
     }
 }
