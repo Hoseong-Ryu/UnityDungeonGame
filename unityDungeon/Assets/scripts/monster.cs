@@ -9,13 +9,13 @@ public class monster : MonoBehaviour
     public Animator animator;
     public Slider hpBar;
 
-    private float maxHp = 100;
-    private float curHp = 100;
+    public float monHp = 100f;
     
     private bool animationMove = false;
     private bool animationAttack = false;
     private bool moveFinish = false;
     private CharacterController controller;
+    private bool knockdown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,8 @@ public class monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) >= 0.9&&moveFinish==false)
+        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) >= 0.9&&moveFinish==false&&knockdown == false&&
+            Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) <= 8)
         {
             Debug.Log(moveFinish);
             if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) < 1)
@@ -48,24 +49,37 @@ public class monster : MonoBehaviour
             }
         }
 
-        if (moveFinish)
+        if (moveFinish &&knockdown == false)
         {
             if (animationAttack == false)
             {
                 animator.Play("Z_Attack", -1, 0);
                 animationAttack = true;
-                hpBar.value -= 0.5f;
+                hpBar.value -= 0.01f;
             }
             else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             {
                 animator.Play("Z_Attack", -1, 0);
-                hpBar.value -= 0.5f;
+                hpBar.value -= 0.01f;
                 // animationAttack = false;
             }
             if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) >= 1.6)
             {
                 moveFinish = false;
                 animationMove = false;
+            }
+        }
+        if (monHp <= 0f &&knockdown == false)
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f&&knockdown == false)
+            {
+                animator.Play("Z_FallingBack", -1, 0);
+                knockdown = true;
+            }
+            if(knockdown)
+            {
+                Destroy(gameObject.GetComponent<BoxCollider>());
+                Destroy(gameObject, 2);
             }
         }
     }
