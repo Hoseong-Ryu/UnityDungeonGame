@@ -50,10 +50,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\Cam.cs" />
      <Compile Include="Assets\scripts\healthPoint.cs" />
      <Compile Include="Assets\scripts\player.cs" />
      <Compile Include="Assets\scripts\monster.cs" />
-     <Compile Include="Assets\scripts\Cam.cs" />
+     <Compile Include="Assets\8K Skybox Pack Free\Example Scenes\Script\RotateCamera.cs" />
+     <None Include="Assets\8K Skybox Pack Free\ReadMe.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/hoseong/Documents/GitHub/UnityDungeonGame/unityDungeon/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
