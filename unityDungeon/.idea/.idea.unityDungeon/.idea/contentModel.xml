@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="scripts" t="Include">
+          <e p="Cam.cs" t="Include" />
           <e p="healthPoint.cs" t="Include" />
           <e p="monster.cs" t="Include" />
           <e p="player.cs" t="Include" />
